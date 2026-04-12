@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pages:build": "npx @opennextjs/cloudflare@latest",
+    "deploy": "npx @opennextjs/cloudflare@latest && wrangler deploy",
+    "preview": "npx @opennextjs/cloudflare@latest && wrangler dev"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
@@ -19,6 +22,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.19.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -26,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
     "tailwindcss": "^4",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "wrangler": "^4.81.1"
   }
 }
