@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { NextRequest, NextResponse } from 'next/server'
 
 const isDemoMode = !process.env.NEXT_PUBLIC_SUPABASE_URL ||

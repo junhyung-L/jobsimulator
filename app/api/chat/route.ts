@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { NextRequest, NextResponse } from 'next/server'
 import { getOpeningMessage, Category, Difficulty, getSystemPrompt } from '@/lib/personas'
 
