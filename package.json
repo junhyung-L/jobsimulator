@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @opennextjs/cloudflare@latest build",
+    "pages:build": "npx @opennextjs/cloudflare@latest build && mv .open-next/worker.js .open-next/_worker.js",
     "deploy": "npx @opennextjs/cloudflare@latest build && npx @opennextjs/cloudflare@latest deploy",
     "preview": "npx @opennextjs/cloudflare@latest build && npx @opennextjs/cloudflare@latest preview"
   },
