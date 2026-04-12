@@ -41,7 +41,7 @@ async function callLLM(systemPrompt: string, messages: { role: 'user' | 'assista
     apiKey: process.env.OPENROUTER_API_KEY!,
     baseURL: 'https://openrouter.ai/api/v1',
     defaultHeaders: {
-      'HTTP-Referer': 'https://ai-roleplay-simulator.vercel.app',
+      'HTTP-Referer': 'https://jobsimulator.pages.dev',
       'X-Title': 'AI Roleplay Job Simulator',
     },
   })
