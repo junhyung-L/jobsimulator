@@ -31,5 +31,11 @@
     "typescript": "^6.0.2",
     "vercel": "^47.0.4",
     "wrangler": "^4.81.1"
+  },
+  "optionalDependencies": {
+    "@next/swc-linux-x64-gnu": "^16.2.3",
+    "@next/swc-linux-x64-musl": "^16.2.3",
+    "lightningcss-linux-x64-gnu": "^1.32.0",
+    "lightningcss-linux-x64-musl": "^1.32.0"
   }
 }
