@@ -140,9 +140,9 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm overflow-hidden border-2 border-[var(--border)]">
-              <img src="/logo.png" alt="Job Sim AI Logo" className="w-full h-full object-contain scale-[1.35]" />
+              <img src="/logo.png" alt="Job Simulator AI Logo" className="w-full h-full object-contain scale-[1.35]" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-[var(--foreground)]">Job Sim AI</span>
+            <span className="font-bold text-xl tracking-tight text-[var(--foreground)]">Job Simulator AI</span>
           </div>
           <div className="flex items-center gap-6">
             {currentUser && (

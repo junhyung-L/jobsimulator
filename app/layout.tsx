@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Job Sim AI | 직무 역량 강화 플랫폼',
+  title: 'Job Simulator AI | 직무 역량 강화 플랫폼',
   description: 'AI와 함께하는 실전 직무 롤플레이 시뮬레이터',
   icons: {
     icon: '/favicon.png',
