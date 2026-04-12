@@ -1,6 +1,7 @@
 export const runtime = 'edge'
 
 import { NextRequest, NextResponse } from 'next/server'
+import OpenAI from 'openai'
 import { getOpeningMessage, Category, Difficulty, getSystemPrompt } from '@/lib/personas'
 
 const isDemoMode = !process.env.OPENROUTER_API_KEY ||
@@ -38,7 +39,6 @@ const mockReplies: Record<string, string[]> = {
 }
 
 async function callLLM(systemPrompt: string, messages: { role: 'user' | 'assistant'; content: string }[]) {
-  const OpenAI = (await import('openai')).default
   const client = new OpenAI({
     apiKey: process.env.OPENROUTER_API_KEY!,
     baseURL: 'https://openrouter.ai/api/v1',
