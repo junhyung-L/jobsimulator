@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @opennextjs/cloudflare@latest",
-    "deploy": "npx @opennextjs/cloudflare@latest && wrangler deploy",
-    "preview": "npx @opennextjs/cloudflare@latest && wrangler dev"
+    "pages:build": "npx @opennextjs/cloudflare@latest build",
+    "deploy": "npx @opennextjs/cloudflare@latest build && npx @opennextjs/cloudflare@latest deploy",
+    "preview": "npx @opennextjs/cloudflare@latest build && npx @opennextjs/cloudflare@latest preview"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
