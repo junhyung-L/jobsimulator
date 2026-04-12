@@ -1,26 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F0F9FF; /* Lightest Blue Background */
+  --foreground: #0C4A6E; /* Deep Navy Foreground */
+  --primary: #0369A1;    /* Deep Blue brand color */
+  --secondary: #0EA5E9;  /* Sky Blue secondary color */
+  --accent: #16A34A;     /* Success Green accent */
+  --muted: #E7EFF5;      /* Muted secondary background */
+  --border: #BAE6FD;     /* Consistent border color */
+  --destructive: #DC2626; /* Destructive color */
+  --radius: 0.75rem;     /* Rounded corners */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Custom UI Utilities */
+.flat-card {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 150ms ease-in-out;
+}
+
+.flat-card:hover {
+  border-color: var(--primary);
+}
+
+.primary-button {
+  background: var(--primary);
+  color: white;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 150ms ease-in-out;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 150ms ease-in-out;
+}
+
+.secondary-button:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--muted);
 }
