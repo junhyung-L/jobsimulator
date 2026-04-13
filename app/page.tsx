@@ -139,10 +139,10 @@ export default function HomePage() {
       <header className="border-b-2 border-[var(--border)] bg-white/90 backdrop-blur-md sticky top-0 z-20">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm overflow-hidden border-2 border-[var(--border)]">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white flex items-center justify-center shadow-sm overflow-hidden border-2 border-[var(--border)]">
               <img src="/logo.png" alt="Job Simulator AI Logo" className="w-full h-full object-contain scale-[1.35]" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-[var(--foreground)]">Job Simulator AI</span>
+            <span className="font-bold text-lg md:text-xl tracking-tight text-[var(--foreground)] truncate max-w-[120px] sm:max-w-none">Job Simulator AI</span>
           </div>
           <div className="flex items-center gap-6">
             {currentUser && (
@@ -168,11 +168,11 @@ export default function HomePage() {
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
             AI 기반 실전 직무 시뮬레이터
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-[var(--foreground)] leading-[1.1] tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-black text-[var(--foreground)] leading-[1.1] tracking-tight">
             실전처럼 연습하고<br />
             <span className="text-[var(--primary)]">AI 피드백</span>으로 성장하세요
           </h1>
-          <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium px-4">
             고객응대부터 면접, 세일즈까지 — AI가 실제 상황처럼 대화하고<br className="hidden md:block" />
             세션 종료 후 맞춤형 역량 분석 리포트를 제공합니다.
           </p>
@@ -180,7 +180,7 @@ export default function HomePage() {
 
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Form Card */}
-          <div className="bg-white border-2 border-[var(--border)] rounded-[2rem] p-8 md:p-12 space-y-10 shadow-[8px_8px_0px_0px_rgba(186,230,253,0.5)]">
+          <div className="bg-white border-2 border-[var(--border)] rounded-[2rem] p-6 sm:p-8 md:p-12 space-y-10 shadow-[8px_8px_0px_0px_rgba(186,230,253,0.5)]">
             
             {/* Step 1: Name */}
             <div className="space-y-4">
@@ -231,7 +231,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-bold">2</div>
                 <label className="text-lg font-bold text-[var(--foreground)]">직무 카테고리</label>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {categories.map((cat) => {
                   const Icon = cat.icon
                   const isSelected = selectedCategory === cat.id
@@ -271,7 +271,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-bold">3</div>
                 <label className="text-lg font-bold text-[var(--foreground)]">시뮬레이션 난이도</label>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {difficulties.map((diff) => {
                   const isSelected = selectedDifficulty === diff.id
                   return (
@@ -314,7 +314,7 @@ export default function HomePage() {
           </div>
 
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
             {[
               { step: '01', title: '시나리오 선택', desc: '직무와 난이도를\n선택하세요' },
               { step: '02', title: 'AI 롤플레이', desc: 'AI가 실제 상황의\n상대방이 됩니다' },

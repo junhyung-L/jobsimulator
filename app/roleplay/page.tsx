@@ -148,7 +148,7 @@ function RoleplayContent() {
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <header className="border-b-2 border-[var(--border)] bg-white/90 backdrop-blur-md sticky top-0 z-20">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
               onClick={() => router.push('/')}
@@ -158,12 +158,12 @@ function RoleplayContent() {
               <ChevronLeft className="w-6 h-6" />
             </button>
             <div className="h-6 w-0.5 bg-slate-200" />
-            <div className="flex items-center gap-3">
-              <span className="font-bold text-lg text-[var(--foreground)]">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="font-bold text-base sm:text-lg text-[var(--foreground)] truncate max-w-[80px] sm:max-w-none">
                 {categoryLabels[category] || category}
               </span>
               <span
-                className={`text-[10px] px-2.5 py-1 rounded-full font-black tracking-wider uppercase border-2 ${
+                className={`text-[9px] sm:text-[10px] px-2 sm:px-2.5 py-1 rounded-full font-black tracking-wider uppercase border-2 ${
                   difficultyClasses[difficulty] || 'bg-slate-50 text-slate-600 border-slate-100'
                 }`}
               >
@@ -174,19 +174,19 @@ function RoleplayContent() {
           <button
             onClick={handleEndSession}
             disabled={ending || initializing}
-            className="px-5 py-2.5 bg-[var(--foreground)] hover:bg-slate-800 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center gap-2"
+            className="px-3 sm:px-5 py-2 sm:py-2.5 bg-[var(--foreground)] hover:bg-slate-800 text-white text-xs sm:text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center gap-2"
           >
             {ending ? (
-              <>분석 중 <Loader2 className="w-4 h-4 animate-spin" /></>
+              <><span className="hidden sm:inline">분석 중</span> <Loader2 className="w-4 h-4 animate-spin" /></>
             ) : (
-              <>세션 종료 <LogOut className="w-4 h-4" /></>
+              <><span className="hidden sm:inline">세션 종료</span> <LogOut className="w-4 h-4" /> <span className="sm:hidden text-[10px]">종료</span></>
             )}
           </button>
         </div>
       </header>
 
       {/* Chat area */}
-      <div className="flex-1 max-w-4xl w-full mx-auto px-6 py-8 space-y-8 overflow-y-auto">
+      <div className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8 overflow-y-auto">
         {initializing ? (
           <div className="flex flex-col items-center justify-center pt-32 space-y-4 text-center">
             <div className="w-16 h-16 rounded-[2rem] bg-[var(--background)] flex items-center justify-center border-2 border-[var(--border)] animate-bounce">
@@ -218,18 +218,18 @@ function RoleplayContent() {
                 >
                   {/* Avatar */}
                   <div
-                    className={`w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center border-2 transition-all ${
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex-shrink-0 flex items-center justify-center border-2 transition-all ${
                       msg.role === 'assistant'
                         ? 'bg-[var(--primary)] text-white border-[var(--primary)]'
                         : 'bg-white text-[var(--foreground)] border-slate-200'
                     }`}
                   >
-                    {msg.role === 'assistant' ? <Zap className="w-6 h-6 fill-current" /> : <User className="w-6 h-6" />}
+                    {msg.role === 'assistant' ? <Zap className="w-5 h-5 sm:w-6 sm:h-6 fill-current" /> : <User className="w-5 h-5 sm:w-6 sm:h-6" />}
                   </div>
 
                   {/* Bubble */}
                   <div
-                    className={`max-w-[80%] md:max-w-[70%] rounded-3xl px-6 py-4 text-[15px] font-medium leading-relaxed shadow-sm ${
+                    className={`max-w-[85%] sm:max-w-[80%] md:max-w-[70%] rounded-2xl sm:rounded-3xl px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-[15px] font-medium leading-relaxed shadow-sm ${
                       msg.role === 'assistant'
                         ? 'bg-white border-2 border-slate-100 text-[var(--foreground)] rounded-tl-lg'
                         : 'bg-[var(--primary)] text-white rounded-tr-lg'
@@ -242,10 +242,10 @@ function RoleplayContent() {
 
               {loading && (
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--primary)] flex-shrink-0 flex items-center justify-center border-2 border-[var(--primary)]">
-                    <Zap className="text-white w-6 h-6 fill-current animate-pulse" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[var(--primary)] flex-shrink-0 flex items-center justify-center border-2 border-[var(--primary)]">
+                    <Zap className="text-white w-5 h-5 sm:w-6 sm:h-6 fill-current animate-pulse" />
                   </div>
-                  <div className="bg-white border-2 border-slate-100 rounded-3xl rounded-tl-lg px-6 py-4 flex items-center">
+                  <div className="bg-white border-2 border-slate-100 rounded-2xl sm:rounded-3xl rounded-tl-lg px-4 sm:px-6 py-3 sm:py-4 flex items-center">
                     <div className="flex gap-1.5 items-center">
                       <span className="w-2 h-2 bg-[var(--primary)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                       <span className="w-2 h-2 bg-[var(--primary)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
@@ -262,8 +262,8 @@ function RoleplayContent() {
 
       {/* Input area */}
       <div className="border-t-2 border-[var(--border)] bg-white/80 backdrop-blur-md pb-safe">
-        <div className="max-w-4xl mx-auto px-6 py-6">
-          <div className="flex gap-4 items-end bg-slate-50 border-2 border-slate-200 rounded-[2rem] p-3 focus-within:border-[var(--primary)] focus-within:bg-white transition-all shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+          <div className="flex gap-2 sm:gap-4 items-end bg-slate-50 border-2 border-slate-200 rounded-2xl sm:rounded-[2rem] p-2 sm:p-3 focus-within:border-[var(--primary)] focus-within:bg-white transition-all shadow-sm">
             <textarea
               ref={inputRef}
               value={input}

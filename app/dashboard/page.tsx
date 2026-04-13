@@ -165,7 +165,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
       <header className="border-b-2 border-[var(--border)] bg-white/90 backdrop-blur-md sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
               onClick={() => router.push('/')}
@@ -175,10 +175,10 @@ export default function DashboardPage() {
             </button>
             <div className="h-6 w-0.5 bg-slate-200" />
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center overflow-hidden">
                 <img src="/logo.png" alt="Logo" className="w-full h-full object-contain scale-125" />
               </div>
-              <span className="font-bold text-lg tracking-tight text-[var(--foreground)]">마이 대시보드</span>
+              <span className="font-bold text-base md:text-lg tracking-tight text-[var(--foreground)] truncate max-w-[100px] sm:max-w-none">마이 대시보드</span>
             </div>
           </div>
           <button
@@ -192,7 +192,7 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-10 space-y-10">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-10">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-32 space-y-4">
             <Loader2 className="w-12 h-12 text-[var(--primary)] animate-spin" />
@@ -201,7 +201,7 @@ export default function DashboardPage() {
         ) : (
           <>
             {/* Summary stats */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: '전체 세션', value: sessions.length, unit: '개', icon: Calendar, bg: 'bg-white', text: 'text-[var(--foreground)]' },
                 { label: '완료 역량', value: completedSessions.length, unit: '건', icon: CheckCircle2, bg: 'bg-blue-50', text: 'text-[var(--primary)]' },
@@ -215,13 +215,13 @@ export default function DashboardPage() {
                   text: 'text-rose-600',
                 },
               ].map((stat, i) => (
-                <div key={i} className={`border-2 border-[var(--border)] rounded-3xl p-6 shadow-sm ${stat.bg}`}>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{stat.label}</span>
-                    <stat.icon className={`w-5 h-5 ${stat.text} opacity-20`} />
+                <div key={i} className={`border-2 border-[var(--border)] rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm ${stat.bg}`}>
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <span className="text-[9px] sm:text-[10px] font-black text-slate-400 uppercase tracking-wider md:tracking-[0.2em]">{stat.label}</span>
+                    <stat.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${stat.text} opacity-20`} />
                   </div>
-                  <div className={`text-3xl font-black ${stat.text} tracking-tight`}>
-                    {stat.value}<span className="text-sm ml-1 font-bold opacity-60">{stat.unit}</span>
+                  <div className={`text-xl sm:text-3xl font-black ${stat.text} tracking-tight`}>
+                    {stat.value}<span className="text-xs ml-0.5 font-bold opacity-60">{stat.unit}</span>
                   </div>
                 </div>
               ))}
@@ -230,7 +230,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               {/* Average scores chart area */}
               <div className="lg:col-span-1 space-y-6">
-                <div className="bg-white border-2 border-[var(--border)] rounded-3xl p-8 space-y-8 shadow-[8px_8px_0px_0px_rgba(241,245,249,1)]">
+                <div className="bg-white border-2 border-[var(--border)] rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-6 sm:space-y-8 shadow-[8px_8px_0px_0px_rgba(241,245,249,1)]">
                   <div className="flex items-center gap-3">
                     <TrendingUp className="w-5 h-5 text-[var(--primary)]" />
                     <h3 className="font-black text-lg text-[var(--foreground)] uppercase tracking-tight">전체 역량 지표</h3>
@@ -291,30 +291,27 @@ export default function DashboardPage() {
                         }`}
                       >
                         <div
-                          className="p-6 md:p-8 flex items-center justify-between cursor-pointer"
+                          className="p-5 sm:p-6 md:p-8 flex items-center justify-between cursor-pointer"
                           onClick={() =>
                             setExpandedSession(expandedSession === session.id ? null : session.id)
                           }
                         >
-                          <div className="flex items-center gap-6">
-                            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border-2 transition-colors ${
+                          <div className="flex items-center gap-4 sm:gap-6">
+                            <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex-items-center justify-center border-2 transition-colors flex flex-shrink-0 items-center justify-center ${
                                 session.feedback ? 'bg-blue-50 border-blue-100 text-[var(--primary)]' : 'bg-slate-50 border-slate-100 text-slate-300'
                             }`}>
-                                <User className="w-6 h-6" />
+                                <User className="w-5 h-5 sm:w-6 sm:h-6" />
                             </div>
-                            <div className="space-y-1.5">
-                              <div className="flex flex-wrap items-center gap-3">
-                                <span className="font-black text-xl text-[var(--foreground)] tracking-tight">{session.student_name}</span>
-                                <span className={`text-[10px] px-2.5 py-1 rounded-full font-black tracking-wider uppercase border-2 ${
+                            <div className="space-y-1 sm:space-y-1.5 flex-1 min-w-0">
+                              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                                <span className="font-black text-lg sm:text-xl text-[var(--foreground)] tracking-tight truncate">{session.student_name}</span>
+                                <span className={`text-[8px] sm:text-[10px] px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full font-black tracking-wider uppercase border-2 ${
                                     difficultyClasses[session.difficulty] || 'bg-slate-50 text-slate-600 border-slate-100'
                                 }`}>
                                   {difficultyLabels[session.difficulty] || session.difficulty}
                                 </span>
-                                <span className="text-[10px] px-2.5 py-1 rounded-full bg-slate-100 border-2 border-slate-200 text-slate-500 font-black uppercase tracking-wider">
-                                  {categoryLabels[session.category] || session.category}
-                                </span>
                               </div>
-                              <div className="flex items-center gap-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+                              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-widest truncate">
                                 <Calendar className="w-3 h-3" />
                                 {new Date(session.created_at).toLocaleString('ko-KR', {
                                   month: 'short',
@@ -326,10 +323,10 @@ export default function DashboardPage() {
                             </div>
                           </div>
     
-                          <div className="flex items-center gap-8">
+                          <div className="flex items-center gap-4 sm:gap-8">
                             {session.feedback ? (
-                              <div className="text-right hidden md:block">
-                                <div className={`text-2xl font-black ${
+                              <div className="text-right hidden sm:block">
+                                <div className={`text-xl sm:text-2xl font-black ${
                                   session.feedback.total_score >= 80 ? 'text-[var(--primary)]' :
                                   session.feedback.total_score >= 60 ? 'text-amber-500' : 'text-rose-500'
                                 }`}>

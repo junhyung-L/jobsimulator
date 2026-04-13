@@ -180,31 +180,31 @@ function FeedbackContent() {
     <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
       <header className="border-b-2 border-[var(--border)] bg-white/90 backdrop-blur-md sticky top-0 z-20">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center shadow-sm">
               <Zap className="text-white w-6 h-6 fill-current" />
             </div>
             <span className="font-bold text-lg tracking-tight text-[var(--foreground)]">리포트</span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <button
               onClick={() => router.push('/')}
-              className="px-4 py-2 text-sm font-bold text-slate-500 hover:text-[var(--primary)] transition-colors flex items-center gap-2"
+              className="px-2 sm:px-4 py-2 text-xs sm:text-sm font-bold text-slate-500 hover:text-[var(--primary)] transition-colors flex items-center gap-1 sm:gap-2"
             >
-              <ArrowLeft className="w-4 h-4" /> 다시 연습
+              <ArrowLeft className="w-4 h-4" /> <span className="hidden sm:inline">다시 연습</span>
             </button>
             <button
               onClick={() => router.push('/dashboard')}
-              className="px-5 py-2 bg-[var(--foreground)] text-white font-bold rounded-xl text-sm transition-all hover:bg-slate-800 flex items-center gap-2"
+              className="px-3 sm:px-5 py-2 bg-[var(--foreground)] text-white font-bold rounded-xl text-[10px] sm:text-sm transition-all hover:bg-slate-800 flex items-center gap-1 sm:gap-2"
             >
-              <LayoutDashboard className="w-4 h-4" /> 마이 대시보드
+              <LayoutDashboard className="w-4 h-4" /> <span className="hidden sm:inline">마이 대시보드</span><span className="sm:hidden text-xs">홈</span>
             </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-12 space-y-8">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8">
         {/* Session info info */}
         <div className="flex items-center gap-3 text-sm font-bold">
           <span className="px-3 py-1 bg-white border-2 border-[var(--border)] rounded-full text-[var(--primary)] uppercase tracking-tight">
@@ -219,12 +219,12 @@ function FeedbackContent() {
         </div>
 
         {/* Hero Score Card */}
-        <div className="bg-white border-2 border-[var(--border)] rounded-[2.5rem] p-10 md:p-14 shadow-[12px_12px_0px_0px_rgba(186,230,253,0.5)] flex flex-col md:flex-row items-center gap-12">
+        <div className="bg-white border-2 border-[var(--border)] rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-10 md:p-14 shadow-[12px_12px_0px_0px_rgba(186,230,253,0.5)] flex flex-col md:flex-row items-center gap-10 md:gap-12">
           <div className="flex-1 space-y-6 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-[var(--primary)] px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
               Professional Competency Analysis
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--foreground)] leading-tight tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-black text-[var(--foreground)] leading-tight tracking-tight">
               귀하의 종합 <br className="hidden md:block" />
               역량 점수입니다
             </h2>
@@ -247,7 +247,7 @@ function FeedbackContent() {
         </div>
 
         {/* Sub Scores Grid */}
-        <div className="bg-white border-2 border-[var(--border)] rounded-[2.5rem] p-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="bg-white border-2 border-[var(--border)] rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-10 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10">
           <ScoreRing score={feedback.empathy_score} label="COMMUNICATION" color="#0EA5E9" icon={MessageSquare} />
           <ScoreRing score={feedback.problem_solving_score} label="PROBLEM SOLVING" color="#8B5CF6" icon={Trophy} />
           <ScoreRing score={feedback.communication_score} label="ADAPTABILITY" color="#10B981" icon={TrendingUp} />
@@ -256,7 +256,7 @@ function FeedbackContent() {
         {/* Detailed Feedback Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Strengths */}
-          <div className="bg-white border-2 border-[var(--border)] rounded-3xl p-8 space-y-6">
+          <div className="bg-white border-2 border-[var(--border)] rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center border-2 border-emerald-100">
                 <CheckCircle2 className="w-6 h-6" />
@@ -275,7 +275,7 @@ function FeedbackContent() {
           </div>
 
           {/* Improvements */}
-          <div className="bg-white border-2 border-[var(--border)] rounded-3xl p-8 space-y-6">
+          <div className="bg-white border-2 border-[var(--border)] rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center border-2 border-amber-100">
                 <AlertCircle className="w-6 h-6" />
@@ -295,17 +295,17 @@ function FeedbackContent() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-[var(--primary)] rounded-[2.5rem] p-12 text-center text-white space-y-6 shadow-xl shadow-blue-100 relative overflow-hidden">
+        <div className="bg-[var(--primary)] rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-12 text-center text-white space-y-6 shadow-xl shadow-blue-100 relative overflow-hidden">
           <div className="relative z-10 space-y-4">
-            <h3 className="text-3xl font-black tracking-tight">더 높은 경지에 도전하세요</h3>
-            <p className="text-blue-100 font-bold text-lg max-w-lg mx-auto leading-relaxed">
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight">더 높은 경지에 도전하세요</h3>
+            <p className="text-blue-100 font-bold text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
               훈련 성과는 반복을 통해 완성됩니다. <br />
               동일한 시나리오의 다른 난이도에 도전해보시는건 어떨까요?
             </p>
-            <div className="pt-4">
+            <div className="pt-2 sm:pt-4">
               <button
                 onClick={() => router.push('/')}
-                className="bg-white text-[var(--primary)] font-black px-10 py-4 rounded-2xl hover:bg-blue-50 transition-all text-lg shadow-lg"
+                className="bg-white text-[var(--primary)] font-black px-8 sm:px-10 py-3 sm:py-4 rounded-2xl hover:bg-blue-50 transition-all text-base sm:text-lg shadow-lg"
               >
                 새로운 롤플레이 시작
               </button>

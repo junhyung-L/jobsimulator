@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import WebViewGuard from '@/components/WebViewGuard'
 
 export const metadata: Metadata = {
   title: 'Job Simulator AI | 직무 역량 강화 플랫폼',
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="h-full">
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        <WebViewGuard />
+        {children}
+      </body>
     </html>
   )
 }
