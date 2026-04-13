@@ -142,9 +142,9 @@ export default function HomePage() {
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white flex items-center justify-center shadow-sm overflow-hidden border-2 border-[var(--border)]">
               <img src="/logo.png" alt="Job Simulator AI Logo" className="w-full h-full object-contain scale-[1.35]" />
             </div>
-            <span className="font-bold text-lg md:text-xl tracking-tight text-[var(--foreground)] truncate max-w-[120px] sm:max-w-none">Job Simulator AI</span>
+            <span className="font-bold text-lg md:text-xl tracking-tight text-[var(--foreground)] truncate max-w-[150px] sm:max-w-none">Job Simulator AI</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 sm:gap-6">
             {currentUser && (
               <>
                 <button
