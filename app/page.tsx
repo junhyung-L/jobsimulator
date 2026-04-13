@@ -22,7 +22,7 @@ const categories = [
     id: 'customer' as Category,
     label: '고객응대',
     icon: Target,
-    description: '불만 고객 응대, 문제 해결, CS 커뮤니케이션',
+    description: '불만 고객 응대, 문제 해결,\nCS 커뮤니케이션',
     color: 'text-blue-600',
     bg: 'bg-blue-50'
   },
@@ -30,7 +30,7 @@ const categories = [
     id: 'interview' as Category,
     label: '면접',
     icon: Briefcase,
-    description: '신입/경력 면접, 압박 질문, 역량 어필 연습',
+    description: '신입/경력 면접, 압박 질문,\n역량 어필 연습',
     color: 'text-indigo-600',
     bg: 'bg-indigo-50'
   },
@@ -38,7 +38,7 @@ const categories = [
     id: 'sales' as Category,
     label: '세일즈',
     icon: TrendingUp,
-    description: 'B2C/B2B 영업, 가격 협상, 클로징 기술',
+    description: 'B2C/B2B 영업, 가격 협상,\n클로징 기술',
     color: 'text-emerald-600',
     bg: 'bg-emerald-50'
   },
@@ -251,7 +251,7 @@ export default function HomePage() {
                         <Icon className={`w-6 h-6 ${isSelected ? 'text-white' : cat.color}`} />
                       </div>
                       <div className="font-bold text-lg mb-1">{cat.label}</div>
-                      <div className={`text-xs leading-snug font-medium ${isSelected ? 'text-blue-100' : 'text-slate-500'}`}>
+                      <div className={`text-xs leading-snug font-medium whitespace-pre-line break-keep ${isSelected ? 'text-blue-100' : 'text-slate-500'}`}>
                         {cat.description}
                       </div>
                       {isSelected && (
