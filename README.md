@@ -3,7 +3,7 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Claude API](https://img.shields.io/badge/Claude_API-Anthropic-7C3AED?logo=anthropic&logoColor=white)](https://www.anthropic.com/)
+[![OpenRouter API](https://img.shields.io/badge/OpenRouter-API-7C3AED)](https://openrouter.ai/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-3FCF8E?logo=supabase&logoColor=white)](https://supabase.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-white?logo=vercel&logoColor=black)](https://vercel.com/)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://jobsimulatorai.baseis.net/)
@@ -135,7 +135,6 @@ To run this project locally, follow these steps:
 3. Set up environment variables:
    Create a `.env.local` file in the root directory and add:
    ```env
-   ANTHROPIC_API_KEY=your_key_here
    OPENROUTER_API_KEY=your_key_here
    NEXT_PUBLIC_SUPABASE_URL=your_url_here
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key_here
